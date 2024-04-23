@@ -1,80 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Shopping List</title>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <img src="images/note.png" alt="" />
-        <h1 id="app-title">Shopping List</h1>
-      </header>
-      <form id="item-form">
-        <div class="form-control">
-          <input
-            type="text"
-            class="form-input"
-            id="item-input"
-            name="item"
-            placeholder="Enter Item"
-          />
-        </div>
-        <div class="form-control">
-          <button type="submit" class="btn">
-            <i class="fa-solid fa-plus"></i> Add Item
-          </button>
-        </div>
-      </form>
 
-      <div class="filter">
-        <input
-          type="text"
-          class="form-input-filter"
-          id="filter"
-          placeholder="Filter Items"
-        />
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> BT COMPSCI PROJECTS</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: FlexStart
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top ">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span>BT COMPSCI PROJECTS</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+    <!-- ======= Values Section ======= -->
+    
+    <!-- <section id="values" class="values my-5">
+
+      <div class="container my-5" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="box">
+              <img src="assets/img/values-1.png" class="img-fluid" alt="">
+              <h3>Ad cupiditate sed est odio</h3>
+              <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="box">
+              <img src="assets/img/values-2.png" class="img-fluid" alt="">
+              <h3>Voluptatem voluptatum alias</h3>
+              <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <div class="box">
+              <img src="assets/img/values-3.png" class="img-fluid" alt="">
+              <h3>Fugit cupiditate alias nobis.</h3>
+              <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
-      <ul id="item-list" class="items">
-        <li>
-          Apples
-          <button class="remove-item btn-link text-red">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        <li>
-          Orange Juice
-          <button class="remove-item btn-link text-red">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-        <li>
-          Oreos
-          <button class="remove-item btn-link text-red">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-        <li>
-          Milk
-          <button class="remove-item btn-link text-red">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-      </ul>
+    </section> -->
+    
+    <!-- End Values Section -->
+   
 
-      <button id="clear" class="btn-clear">Clear All</button>
-    </div>
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
 
-    <script src="script.js"></script>
-  </body>
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-games">Games (Sophomores)</li>
+              <li data-filter=".filter-apps">Web Apps (Juniors)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/bubble-shooter/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Bubble Shooter</h4>
+                <p>By AP CSP CLASS</p>
+                <div class="portfolio-links">
+                  <a href="games/bubble-shooter/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Penguin Run"><i class="bi bi-plus"></i></a>
+                  <a href="games/bubble-shooter/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/penguin-run/game-thumbnail.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Penguin Run</h4>
+                <p>By Casey Lee</p>
+                <div class="portfolio-links">
+                  <a href="games/penguin-run/game-thumbnail.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Penguin Run"><i class="bi bi-plus"></i></a>
+                  <a href="games/penguin-run/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/asteroids/game-thumbnail.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Avoid Asteroids</h4>
+                <p>By Ben Lozzano</p>
+                <div class="portfolio-links">
+                  <a href="games/asteroids/game-thumbnail.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
+                  <a href="games/asteroids/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/project-ud/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>PROJECT:UD</h4>
+                <p>By Junhyun Park & Robert Sullivan</p>
+                <div class="portfolio-links">
+                  <a href="games/project-ud/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="games/project-ud/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/capybario/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Capybario</h4>
+                <p>By Evan Cabrera</p>
+                <div class="portfolio-links">
+                  <a href="games/capybario/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="games/capybario/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/time-freeze/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Time Freeze</h4>
+                <p>By Noah Kim</p>
+                <div class="portfolio-links">
+                  <a href="games/time-freeze/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="games/time-freeze/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/flapping-birdy/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Flapping Birdy</h4>
+                <p>By Evan Taubenfeld</p>
+                <div class="portfolio-links">
+                  <a href="games/flapping-birdy/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="games/flapping-birdy/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/shape-sketchbook/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Shape Sketchbook</h4>
+                <p>By Elliot Lim </p>
+                <div class="portfolio-links">
+                  <a href="games/shape-sketchbook/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="games/shape-sketchbook/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/flappy-bird/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Flappy Bird</h4>
+                <p>By Ece Berrak </p>
+                <div class="portfolio-links">
+                  <a href="games/flappy-bird/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="games/flappy-bird/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/penalty-shooters/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Penalty Shooters</h4>
+                <p>By Leo Langley</p>
+                <div class="portfolio-links">
+                  <a href="games/penalty-shooters/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="games/penalty-shooters/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-games">         <div class="portfolio-wrap">
+              <img src="games/water-physics/game.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Water Physics</h4>
+                <p>By Reese Clews</p>
+                <div class="portfolio-links">
+                  <a href="games/water-physics/game.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="games/water-physics/index.html" title="Play Game"><i class="bi bi-play"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-apps">         <div class="portfolio-wrap">
+              <img src="assets/img/apps/bt-bus.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Berten Tech Bus App</h4>
+                <p>By Hunter Mullen - Anurag Matthews - Noah Stanford</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/apps/bt-bus-big.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Berten Tech Bus App"><i class="bi bi-plus"></i></a>
+                  <a target="_blank" href="https://flask-final-project-advpro23-1.advpro23.repl.co/" title="Play Game"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-lg-4 col-md-6 portfolio-item filter-apps">         <div class="portfolio-wrap">
+              <img src="assets/img/apps/club.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>BT Club Directory</h4>
+                <p>By Forum Shah - Carlin Verano - Ava Hewitt</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/apps/club-big.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="BT Club Directory"><i class="bi bi-plus"></i></a>
+                  <a target="_blank" href="https://flask-final-project-advpro23.advpro23.repl.co/" title="Play Game"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-apps">         <div class="portfolio-wrap">
+              <img src="assets/img/apps/poll.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>BT Polls App</h4>
+                <p>By Abdulwahhab Jag - Longa Silungwe - Patrick Lambe</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/apps/poll-big.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="BT Polls App"><i class="bi bi-plus"></i></a>
+                  <a target="_blank" href="https://flask-final-project-advpro23-5.advpro23.repl.co/" title="Play Game"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item filter-apps">         <div class="portfolio-wrap">
+              <img src="assets/img/apps/tutor.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>BT Tutor</h4>
+                <p>By Christopher Alvarez - Emily Cho - Elijah Ali</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/apps/tutor-big.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="BT Polls App"><i class="bi bi-plus"></i></a>
+                  <a target="_blank" href="https://flask-final-project-advpro23-2.advpro23.repl.co/" title="Play Game"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item filter-apps">         <div class="portfolio-wrap">
+              <img src="assets/img/apps/menu.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>BT Menu</h4>
+                <p>By Matthew Wong - Joseph Thomas - Kyle Beharry</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/apps/menu-big.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="BT Menu"><i class="bi bi-plus"></i></a>
+                  <a target="_blank" href="https://flask-final-project-advpro23-3.advpro23.repl.co/" title="Play Game"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item filter-apps">         <div class="portfolio-wrap">
+              <img src="assets/img/apps/forum.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>BT Forum</h4>
+                <p>By Jem Riche - Victoria Palmowski</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/apps/forum-big.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="BT Forum"><i class="bi bi-plus"></i></a>
+                  <a target="_blank" href="https://flask-final-project-advpro23-6.advpro23.repl.co/" title="Play Game"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item filter-apps">         <div class="portfolio-wrap">
+              <img src="assets/img/apps/learnguages.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Learnguages</h4>
+                <p>By Santiago Robayo - Christopher Kucharek - Johhny Prowitz</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/apps/learnguages.png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Learnguages"><i class="bi bi-plus"></i></a>
+                  <a target="_blank" href="https://flask-final-project-advpro23-4.advpro23.repl.co/" title="Play Game"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+
+      </div>
+
+    </section><!-- End Portfolio Section -->
+
+   
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+   
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
